@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rewards Hub · Android screens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{--bg:#000;--s1:#0A0A0A;--s2:#111;--s3:#141414;--line:rgba(255,255,255,.1);--text:#F5F5F5;--t2:#D4D4D4;--t3:#A3A3A3;--t4:#8C8C8C;--green:#00D26A;--gold:#F0B90B;--blue:#5BB8F5;--purple:#C3A6FF;--indigo:#8EA1FF;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#050505;color:var(--text);font:15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input{font:inherit;color:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+a{color:var(--green)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+.top{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1d1d1d;padding:12px 24px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.top nav{display:flex;flex-wrap:wrap;gap:8px}
+.top nav a{min-height:40px;display:inline-flex;align-items:center;padding:0 14px;border-radius:10px;border:1px solid #2a2a2a;color:var(--t2);text-decoration:none;font-weight:600;font-size:14px}
+.top nav a.on{background:var(--text);color:#000;border-color:var(--text)}
+.intro{padding:28px 24px 8px;max-width:1500px;margin:0 auto}
+.intro h1{margin:0 0 6px;font-size:28px}
+.intro p{margin:0;color:var(--t3);max-width:80ch}
+.sec{max-width:1500px;margin:0 auto;padding:24px}
+.sec>h2{font-size:22px;margin:24px 0 20px;padding-top:12px;border-top:1px solid #1d1d1d}
+.pgrid{display:flex;flex-wrap:wrap;gap:40px 32px;align-items:flex-start}
+.fig{margin:0;width:432px;max-width:100%}
+.fig figcaption{margin-bottom:12px;display:flex;flex-direction:column;gap:2px}
+.fig figcaption b{font-size:17px}
+.fig figcaption span{color:var(--t3);font-size:13px}
+.phone{width:432px;max-width:100%;border:10px solid #1b1b1b;border-radius:34px;overflow:hidden;background:#000;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.phone.fixed>.screen{height:915px;overflow:hidden}
+.screen{width:412px;position:relative}
+
+/* phone screen */
+.p-root{position:relative;min-height:915px;height:100%;background:#000;color:var(--text);font-size:14px;line-height:1.45;padding:16px;display:flex;flex-direction:column;gap:14px}
+.p-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.muted{color:var(--t3)}
+.btn{min-height:44px;padding:0 12px;border-radius:9px;font-size:13px;font-weight:700;white-space:nowrap;cursor:pointer;border:0;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.btn.green{background:var(--green);color:#000}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.25)}
+.btn.done{background:rgba(0,210,106,.10);color:var(--green);border:1px solid rgba(0,210,106,.5);cursor:default}
+.btn.light{background:var(--text);color:#000}
+.btn.okline{background:transparent;color:var(--green);border:1px solid rgba(0,210,106,.5);cursor:default}
+.btn.plain{background:transparent;color:var(--green);cursor:default}
+.btn.full{width:100%;min-height:48px}
+.p-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding:4px;border-radius:12px;background:var(--s1);border:1px solid var(--line)}
+.p-tab{min-height:40px;border-radius:9px;border:0;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:transparent;color:var(--t3);cursor:pointer}
+.p-tab.on{background:var(--text);color:#000}
+.p-card{background:var(--s1);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.p-card.greenline{border-color:rgba(0,210,106,.35)}
+.h2s{margin:0;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--t3)}
+.h2s.g{color:var(--green)}
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pbox{background:var(--s2);border-radius:10px;padding:10px}
+.plbl{font-size:10px;color:var(--t3);letter-spacing:.06em;text-transform:uppercase}
+.pnum{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:18px;font-weight:700}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.bar{height:6px;border-radius:999px;background:#1F1F1F;overflow:hidden}
+.bar i{display:block;height:100%}
+.streak{background:var(--s1);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px}
+.acc{display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;background:var(--s2);border:1px solid rgba(255,255,255,.08)}
+.acc.on{border-color:rgba(0,210,106,.35)}
+.tile{width:36px;height:36px;flex:0 0 36px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.lrow{display:flex;justify-content:space-between;align-items:center;padding:9px 10px;border-radius:9px;background:var(--s2);font-variant-numeric:tabular-nums}
+.pgroups{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.grp{display:flex;justify-content:space-between;align-items:center;gap:8px;min-height:48px;padding:0 12px;border-radius:10px;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:var(--s1);text-align:left}
+.grp.on{border-color:var(--text);background:var(--s3)}
+.grp b{font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+.note{padding:10px 12px;border-radius:10px;background:var(--s1);border:1px solid var(--line);font-size:13px}
+.cad{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;color:var(--t3);text-transform:uppercase}
+.qcard{background:var(--s1);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.qcard h3{margin:0;font-size:15px;line-height:1.3}
+.tag{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 7px;border-radius:6px;border:1px solid currentColor}
+.qfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.08)}
+.seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px;padding:4px;border-radius:12px;background:var(--s3)}
+.seg button{min-height:40px;border-radius:9px;border:0;font-weight:600;font-size:13px;cursor:pointer;background:transparent;color:var(--t2)}
+.seg button.on{background:var(--text);color:#000}
+.brow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;border-radius:10px;font-variant-numeric:tabular-nums;background:var(--s1);border:1px solid rgba(255,255,255,.08)}
+.hist{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px;border-radius:10px;background:var(--s1);border:1px solid rgba(255,255,255,.08)}
+.foot{display:flex;flex-direction:column;gap:4px;color:var(--t4);font-size:12px;padding-top:4px}
+.p-ov{position:absolute;inset:0;background:rgba(0,0,0,.75);z-index:5;display:flex;flex-direction:column;justify-content:flex-end}
+.sheet{position:sticky;bottom:0;background:#0F0F0F;border-top:1px solid rgba(255,255,255,.16);border-radius:22px 22px 0 0;padding:10px 16px 24px;display:flex;flex-direction:column;gap:14px}
+.grab{align-self:center;width:40px;height:4px;border-radius:4px;background:#3A3A3A}
+.kick{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.x{min-width:44px;min-height:44px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:transparent;cursor:pointer;font-size:16px}
+.step{display:flex;gap:10px;padding:12px;border-radius:12px;background:var(--s3)}
+.dot{width:26px;height:26px;flex:0 0 26px;border-radius:999px;background:rgba(0,210,106,.14);color:var(--green);font-weight:700;display:flex;align-items:center;justify-content:center}
+.field{min-height:48px;width:100%;padding:0 12px;border-radius:10px;border:1px solid var(--green);background:#050505;font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px}
+.ok{display:flex;gap:8px;padding:10px 12px;border-radius:10px;background:rgba(0,210,106,.08);border:1px solid rgba(0,210,106,.35);color:var(--t2);font-size:13px}
+.video{aspect-ratio:16/9;max-width:100%;border-radius:12px;background:var(--s3);border:1px dashed rgba(255,255,255,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--t3);font-size:12px;text-align:center;padding:8px}
+.play{width:44px;height:44px;border-radius:999px;background:var(--green);color:#000;display:flex;align-items:center;justify-content:center}
+.opt{display:flex;align-items:center;gap:10px;min-height:48px;padding:0 12px;border-radius:10px;font-size:14px;cursor:pointer;border:1px solid rgba(255,255,255,.12);background:var(--s3)}
+.opt.on{border-color:var(--green);background:rgba(0,210,106,.08)}
+.opt input{width:18px;height:18px;accent-color:var(--green);margin:0}
+.days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:5px}
+.day{display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px;border-radius:9px;font-weight:700;font-size:12px}
+.day small{font-size:10px;color:var(--t3);font-weight:400}
+.day.past{background:var(--s3);color:var(--green);border:1px solid rgba(0,210,106,.3)}
+.day.now{background:rgba(91,184,245,.14);color:var(--blue);border:1px solid var(--blue)}
+.day.next{background:rgba(240,185,11,.10);color:var(--gold);border:1px dashed rgba(240,185,11,.6)}
+ul.rules{margin:0;padding-left:18px;color:var(--t2);font-size:13px;display:flex;flex-direction:column;gap:4px}
+</style>
+</head>
+<body>
+<div class="top">
+<b>CrymadX Rewards Hub · Season 1 design</b>
+<nav aria-label="Design files">
+<a href="index.html">Start</a>
+<a href="1-Web.html">Web</a>
+<a href="2-Android.html" class="on" aria-current="page">Android</a>
+<a href="3-How-checks-work.html">How checks work</a>
+</nav>
+</div>
+
+<div class="intro">
+<h1>Android screens</h1>
+<p>The same Rewards Hub on a phone, 412 px wide like most Android phones. Each screen is shown at its full scrolling length, and the pop-ups appear as bottom sheets. Everything is clickable. All numbers are samples, and items in [BRACKETS] are still to be decided.</p>
+</div>
+
+<div class="sec">
+<h2>Screens</h2>
+<div class="pgrid" id="screens-list"></div>
+<h2>Bottom sheets</h2>
+<div class="pgrid" id="popups-list"></div>
+</div>
+
+<script>
+const FRAMES = [
+  { id: 'a1', list: 'screens', title: 'Android 1 · Overview', sub: 'XP, level, streaks, accounts, leaderboard.', init: { tab: 'overview' } },
+  { id: 'a2', list: 'screens', title: 'Android 2 · Quests: Start here', sub: 'One-time setup quests.', init: { tab: 'quests', group: 'start' } },
+  { id: 'a3', list: 'screens', title: 'Android 3 · Quests: Weekly', sub: 'Discord, Telegram and X.', init: { tab: 'quests', group: 'weekly' } },
+  { id: 'a4', list: 'screens', title: 'Android 4 · Quests: Learn', sub: 'Videos and quizzes.', init: { tab: 'quests', group: 'learn' } },
+  { id: 'a5', list: 'screens', title: 'Android 5 · Quests: On-chain', sub: 'The most XP.', init: { tab: 'quests', group: 'onchain' } },
+  { id: 'a6', list: 'screens', title: 'Android 6 · Leaderboard', sub: 'Total, community or on-chain.', init: { tab: 'board' } },
+  { id: 'a7', list: 'screens', title: 'Android 7 · History', sub: 'Every XP earned.', init: { tab: 'history' } },
+  { id: 'a8', list: 'popups', title: 'Android 8 · Verify an account', sub: 'Discord, Telegram or X.', init: { tab: 'overview', modal: 'verify' }, fixed: true },
+  { id: 'a9', list: 'popups', title: 'Android 9 · Submit a message link', sub: 'Weekly quests.', init: { tab: 'quests', group: 'weekly', modal: 'submit' }, fixed: true },
+  { id: 'a10', list: 'popups', title: 'Android 10 · Learn quiz', sub: 'Video, then 3 questions.', init: { tab: 'quests', group: 'learn', modal: 'quiz' }, fixed: true },
+  { id: 'a11', list: 'popups', title: 'Android 11 · Daily reward', sub: 'From the Daily button.', init: { tab: 'overview', modal: 'daily' }, fixed: true },
+  { id: 'a12', list: 'popups', title: 'Android 12 · Hold CMX-R details', sub: 'From the Hold quest.', init: { tab: 'quests', group: 'onchain', modal: 'hold' }, fixed: true }
+];
+
+/* ---------- shared data and logic ---------- */
+const fmt = (n) => n.toLocaleString('en-US');
+const TAGS = { streak: ['Streak', 'var(--gold)'], once: ['One-time', 'var(--t3)'], boosted: ['Boosted', 'var(--green)'], quiz: ['Quiz', 'var(--purple)'], perdollar: ['Per trade', 'var(--green)'] };
+const QUESTS = {
+  start: [
+    { id: 'fx', tag: 'once', title: 'Follow @[X HANDLE] on X', xp: 25, kind: 'c', cadence: 'One-time', desc: 'Follow our main account. Spot-checked, and unfollowing removes the XP.', btn: 'Verify' },
+    { id: 'jd', tag: 'once', title: 'Join the CMX Official Discord', xp: 25, kind: 'c', cadence: 'One-time', desc: 'One home for every CMX project: news, support tickets and feedback. Our bot confirms you joined.', btn: 'Join' },
+    { id: 'jt', tag: 'once', title: 'Join the Telegram group', xp: 25, kind: 'c', cadence: 'One-time', desc: 'Our bot confirms you are in the group.', btn: 'Join' },
+    { id: 'hub', tag: 'once', title: 'Visit CMX HUB', xp: 10, kind: 'c', cadence: 'One-time', desc: 'Sign in to CMX HUB with your CrymadX account and look around.', btn: 'Open' },
+    { id: 'yt', tag: 'once', title: 'Subscribe on YouTube', xp: 25, kind: 'c', cadence: 'One-time', desc: 'Sign in with Google once and we confirm the subscription.', btn: 'Verify' }
+  ],
+  weekly: [
+    { id: 'dc', tag: 'streak', title: 'Start a conversation on Discord', xp: 5, kind: 'c', cadence: 'Weekly ×3 · 1/day', desc: 'Start or join a genuine conversation in the CMX Official Discord, then paste the link to your message.', max: 3, needs: 'discord' },
+    { id: 'tgc', tag: 'streak', title: 'Start a conversation on Telegram', xp: 5, kind: 'c', cadence: 'Weekly ×3 · 1/day', desc: 'Start or join a genuine conversation in our Telegram group, then paste the link to your message.', max: 3, needs: 'tg' },
+    { id: 'rt', tag: 'streak', title: 'Like and repost the weekly post', xp: 10, kind: 'c', cadence: 'Weekly ×3 · 1/day', desc: 'Like and repost one of our latest 3 posts on X, then paste the link.', max: 3, needs: 'x' }
+  ],
+  learn: [
+    { id: 'l1', tag: 'quiz', title: 'What CMX-R is', xp: 30, kind: 'c', cadence: 'One-time · 3 questions', desc: 'Watch the 3-minute explainer, then answer 3 questions.', quiz: true },
+    { id: 'l2', tag: 'quiz', title: 'Native and wrapped CMX-R', xp: 30, kind: 'c', cadence: 'One-time · 3 questions', desc: 'Learn the difference and when to use each one.', quiz: true },
+    { id: 'l3', tag: 'quiz', title: 'How CMX HUB packages work', xp: 30, kind: 'c', cadence: 'One-time · 3 questions', desc: 'What a package is, how it is delivered and how the Vault works.', quiz: true }
+  ],
+  onchain: [
+    { id: 'hold', tag: 'boosted', title: 'Hold CMX-R', xp: 20, xpSuffix: '/day', kind: 'o', cadence: 'Every day held · ×1.5 from day 30', desc: 'Keep 10,000 CMX-R or more in your CrymadX wallet. Counted from a daily snapshot.', progress: 'Day 12', btn: 'Details', opens: 'hold' },
+    { id: 'trade', tag: 'perdollar', title: 'Trade on CrymadX', xp: 2, xpSuffix: '/$1', kind: 'o', cadence: 'Every trade · spot, swap, convert', desc: 'Earn XP for every dollar you trade. Trades between your own accounts are removed.', progress: '$1,180 traded', btn: 'Trade' },
+    { id: 'pkg', tag: 'once', title: 'Buy a CMX HUB package', xp: 500, kind: 'o', cadence: 'Once, +100 per upgrade', desc: 'Buy or upgrade a package on CMX HUB with the same CrymadX account.', btn: 'Open CMX HUB' },
+    { id: 'lock', tag: 'boosted', title: 'Lock CMX-R in the Vault', xp: 40, xpSuffix: '/day', kind: 'o', cadence: 'Every day locked · 3 months or more', desc: 'Lock CMX-R on CMX HUB. Locked coins earn twice the holding XP.', progress: 'Not started', btn: 'Lock' },
+    { id: 'buy', tag: 'once', title: 'First CMX-R buy', xp: 200, kind: 'o', cadence: 'One-time', desc: 'Buy any amount of native or wrapped CMX-R on CrymadX.', btn: 'Buy' }
+  ]
+};
+const ALL = [].concat(QUESTS.start, QUESTS.weekly, QUESTS.learn, QUESTS.onchain);
+const byId = (id) => ALL.find((q) => q.id === id) || QUESTS.weekly[0];
+const GROUPS = [
+  { id: 'start', label: 'Start here', sub: 'One-time setup' },
+  { id: 'weekly', label: 'Weekly', sub: 'Community XP, low per task' },
+  { id: 'learn', label: 'Learn', sub: 'Short videos and quizzes' },
+  { id: 'onchain', label: 'On-chain', sub: 'The most XP' }
+];
+const NOTES = {
+  start: ['One-time setup quests. Small XP, but they unlock the weekly quests.', 'var(--t3)'],
+  weekly: ['Weekly quests earn Community XP and keep your community streak. Each can be done 3 times a week, once a day.', 'var(--blue)'],
+  learn: ['Learn quests earn Community XP. Answer all 3 questions right to finish.', 'var(--purple)'],
+  onchain: ['On-chain quests earn the most XP. Holding and locking pay every day, so starting early matters.', 'var(--green)']
+};
+const ACCNAME = { discord: 'Discord', tg: 'Telegram', x: 'X' };
+const ACC = [
+  { id: 'discord', name: 'Discord', handle: '@[your discord]', color: 'var(--indigo)', bg: 'rgba(142,161,255,.12)' },
+  { id: 'tg', name: 'Telegram', handle: '@[your telegram]', color: 'var(--blue)', bg: 'rgba(91,184,245,.12)' },
+  { id: 'x', name: 'X', handle: 'Needed for the repost quest', color: '#E7E7E7', bg: 'rgba(231,231,231,.10)' }
+];
+const ICON = {
+  discord: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M7 7.5c3.3-1.3 6.7-1.3 10 0 1.6 2.4 2.4 5 2.5 8-1.4 1.1-2.9 1.9-4.6 2.4l-1-1.6M7 7.5C5.4 9.9 4.6 12.5 4.5 15.5c1.4 1.1 2.9 1.9 4.6 2.4l1-1.6"/><circle cx="9.5" cy="12.5" r="1"/><circle cx="14.5" cy="12.5" r="1"/></svg>',
+  tg: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 4L3 11l6.5 2.2L12 20l3.2-4.3L20 19z"/><path d="M9.5 13.2L18 7"/></svg>',
+  x: '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 4l14 16M19 4L5 20"/></svg>',
+  flame: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3c1 3 4.5 5.2 4.5 9.5a4.5 4.5 0 0 1-9 0c0-2 1-3.4 2.2-4.4 0 2 .9 3.2 2.3 3.2 0-3.2-1-5.4 0-8.3z"/></svg>',
+  gift: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 8c-2-4-6-4-6-1s4 1 6 1zm0 0c2-4 6-4 6-1s-4 1-6 1z"/></svg>',
+  check: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#00D26A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex:0 0 18px;margin-top:2px"><path d="M20 6 9 17l-5-5"/></svg>',
+  play: '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>'
+};
+const BOARD = [['k•••o', 9, 2140, 15980], ['m•••a', 9, 3010, 14205], ['d•••v', 8, 1220, 15010], ['s•••e', 8, 2480, 12940], ['j•••n', 8, 1890, 12760], ['p•••h', 7, 2670, 10980], ['r•••y', 7, 1430, 11510], ['n•••e', 7, 2010, 10450]];
+const VER = {
+  discord: { s1: 'Sign in with Discord', d1: 'Opens Discord in a new window. We only see your username and whether you are in our server.', s2: 'Join the CMX Official Discord', d2: 'One server for every CMX project: news, support tickets and feedback.', btn: 'Continue with Discord', bs: 'background:#4752C4;color:#fff' },
+  tg: { s1: 'Sign in with Telegram', d1: 'Confirm in the Telegram app. We only see your username.', s2: 'Join our Telegram group', d2: 'Our bot checks you are in the group.', btn: 'Continue with Telegram', bs: 'background:#1F6FA8;color:#fff' },
+  x: { s1: 'Sign in with X', d1: 'Opens X in a new window. We only see your handle and your public posts.', s2: 'Follow @[X HANDLE]', d2: 'Needed for the weekly repost quest. Follows are spot-checked.', btn: 'Continue with X', bs: 'background:#F5F5F5;color:#000' }
+};
+const SUB = {
+  dc: { how: 'Start or join a genuine conversation in the CMX Official Discord. Then right-click (or long-press) your message, choose Copy Message Link and paste it here.', label: 'Link to your Discord message', value: 'https://discord.com/channels/[server]/[channel]/[message]', help: 'Written this week by @[your discord], 20 characters or more.', check: 'Found it: posted today in #general by @[your discord], 64 characters.' },
+  tgc: { how: 'Start or join a genuine conversation in our Telegram group. Then long-press your message, choose Copy Link and paste it here.', label: 'Link to your Telegram message', value: 'https://t.me/[group]/[message]', help: 'Written this week by @[your telegram], 20 characters or more.', check: 'Found it: posted today in the group by @[your telegram].' },
+  rt: { how: 'Like and repost one of our latest 3 posts on X. If you quote it, add your code [YOUR CODE]. Then paste the link.', label: 'Link to your repost or quote', value: 'https://x.com/[you]/status/[post]', help: 'Must be from your verified X account.', check: 'Found it: a repost of our post from today, by your verified X account.' }
+};
+const QUIZ = {
+  l1: ['[EXPLAINER VIDEO] What CMX-R is · 3:12', 'What do you need before your XP can be paid out in CMX-R?', ['A CMX HUB package', 'A verified identity on CrymadX', '10,000 CMX-R', 'A Discord account']],
+  l2: ['[EXPLAINER VIDEO] Native and wrapped CMX-R · 2:48', 'Which CMX-R can you trade on PancakeSwap?', ['Native CMX-R', 'Wrapped CMX-R on BNB Chain', 'Both', 'Neither']],
+  l3: ['[EXPLAINER VIDEO] CMX HUB packages · 3:30', 'Where do you lock CMX-R to earn Vault rewards?', ['In the CrymadX wallet', 'In the Vault on CMX HUB', 'On PancakeSwap', 'In Telegram']]
+};
+const HISTORY = [
+  ['Held 10,000+ CMX-R (day 12)', 'Today, 00:05 snapshot', '+20 On-chain', 'var(--green)'],
+  ['Repost of the weekly post', 'Today, 09:12', '+10 Community', 'var(--blue)'],
+  ['Traded $240 on CrymadX', 'Yesterday, 18:40', '+480 On-chain', 'var(--green)'],
+  ['Conversation in Discord #general', 'Yesterday, 11:02', '+5 Community', 'var(--blue)'],
+  ['First CMX-R buy', '3 days ago', '+200 On-chain', 'var(--green)'],
+  ['Quiz: What CMX-R is', '4 days ago', '+30 Community', 'var(--blue)']
+];
+
+function initState(o) {
+  const modal = o.modal || null;
+  return {
+    tab: o.tab || 'overview', group: o.group || 'weekly', modal: modal,
+    target: o.target || ({ verify: 'x', submit: 'dc', quiz: 'l2', hold: 'hold' }[modal] || null),
+    boardMode: 'total', daily: modal === 'daily', bonusC: 0, bonusO: 0, quizPick: 'b',
+    verified: { discord: true, tg: true, x: false },
+    subs: { dc: 1, tgc: 0, rt: 2 },
+    done: { fx: true, jd: true, jt: true, hub: true, buy: true, l1: true }
+  };
+}
+function act(s, a) {
+  const p = a.split(':');
+  const k = p[0];
+  if (k === 'tab') s.tab = p[1];
+  else if (k === 'group') s.group = p[1];
+  else if (k === 'board') s.boardMode = p[1];
+  else if (k === 'daily') { if (!s.daily) { s.daily = true; s.modal = 'daily'; } }
+  else if (k === 'close') s.modal = null;
+  else if (k === 'open') { s.modal = p[1]; s.target = p[2]; }
+  else if (k === 'verify') { s.verified[s.target] = true; s.modal = null; }
+  else if (k === 'submit') { s.subs[s.target] = Math.min(3, (s.subs[s.target] || 0) + 1); s.bonusC += byId(s.target).xp; s.modal = null; }
+  else if (k === 'quiz') { if (!s.done[s.target]) s.bonusC += 30; s.done[s.target] = true; s.modal = null; }
+  else if (k === 'pick') s.quizPick = p[1];
+  else if (k === 'do') { const q = byId(p[1]); s.done[q.id] = true; if (q.kind === 'c') s.bonusC += q.xp; else s.bonusO += q.xp; }
+  else if (k === 'goBoard') s.tab = 'board';
+  else if (k === 'goOnchain') { s.tab = 'quests'; s.group = 'onchain'; }
+}
+function totals(s) {
+  const all = s.verified.discord && s.verified.tg && s.verified.x;
+  const c = 940 + s.bonusC + (s.daily ? 10 : 0) + (all ? 30 : 0);
+  const o = 2360 + s.bonusO;
+  return { c: c, o: o, t: c + o };
+}
+function questView(s, q) {
+  let progress = q.progress || '', label = q.btn || 'Go', cls = 'btn green', a = 'noop';
+  if (q.max) {
+    const used = s.subs[q.id] || 0;
+    progress = 'Submissions ' + used + '/' + q.max;
+    if (!s.verified[q.needs]) { label = 'Verify ' + ACCNAME[q.needs] + ' first'; cls = 'btn ghost'; a = 'open:verify:' + q.needs; }
+    else if (used >= q.max) { label = 'Done this week ✓'; cls = 'btn done'; a = ''; }
+    else { label = 'Submit (' + (q.max - used) + ' left)'; a = 'open:submit:' + q.id; }
+  } else if (s.done[q.id]) { label = 'Done ✓'; cls = 'btn done'; a = ''; progress = progress || 'Completed'; }
+  else if (q.quiz) { label = 'Start'; a = 'open:quiz:' + q.id; progress = 'Not started'; }
+  else if (q.opens) { cls = 'btn ghost'; a = 'open:' + q.opens + ':' + q.id; }
+  else if (!q.xpSuffix) { progress = progress || 'Not started'; a = 'do:' + q.id; }
+  return { q: q, progress: progress, label: label, cls: cls, a: a, tag: TAGS[q.tag], xpLabel: '+' + q.xp + (q.xpSuffix || '') + ' XP', xpColor: q.kind === 'o' ? 'var(--green)' : 'var(--blue)' };
+}
+const btn = (label, cls, a, aria) => '<button type="button" class="' + cls + '"' + (a ? ' data-act="' + a + '"' : ' disabled') + (aria ? ' aria-label="' + aria + '"' : '') + '>' + label + '</button>';
+
+
+
+/* ---------- phone screen ---------- */
+const PNOTES = {
+  start: ['One-time setup. Small XP, but it unlocks the weekly quests.', 'var(--t3)'],
+  weekly: ['Community XP. Each quest 3 times a week, once a day.', 'var(--blue)'],
+  learn: ['Community XP. Get all 3 answers right to finish.', 'var(--purple)'],
+  onchain: ['The most XP. Holding and locking pay every day.', 'var(--green)']
+};
+function renderPhone(s) {
+  const T = totals(s);
+  const weeklyDone = QUESTS.weekly.reduce((n, q) => n + (s.subs[q.id] || 0), 0);
+  const tabs = [['overview', 'Overview'], ['quests', 'Quests'], ['board', 'Board'], ['history', 'History']]
+    .map(([id, l]) => '<button type="button" role="tab" aria-selected="' + (s.tab === id) + '" class="p-tab' + (s.tab === id ? ' on' : '') + '" data-act="tab:' + id + '">' + l + '</button>').join('');
+  let h = '<div class="p-root">';
+  h += '<header class="p-head"><div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="eyebrow">Rewards Hub</span><h1 style="margin:0;font-size:22px;line-height:1.2">Season 1: Ignite</h1><span class="muted" style="font-size:12px">45 d 09 h left · pool [POOL SIZE] CMX-R</span></div>'
+    + (s.daily ? '<button type="button" class="btn okline" disabled>Claimed</button>' : '<button type="button" class="btn light" data-act="daily">Daily +10</button>') + '</header>';
+  h += '<div class="p-tabs" role="tablist" aria-label="Rewards sections">' + tabs + '</div>';
+
+  if (s.tab === 'overview') {
+    const accs = ACC.map((a) => {
+      const on = !!s.verified[a.id];
+      return '<div class="acc' + (on ? ' on' : '') + '"><div class="tile" style="color:' + a.color + ';background:' + a.bg + '">' + ICON[a.id] + '</div><div style="flex:1;min-width:0;display:flex;flex-direction:column"><span style="font-weight:600">' + a.name + (on ? ' <span style="color:var(--green);font-weight:700">✓</span>' : '') + '</span><span class="muted" style="font-size:12px">' + (on ? a.handle : 'Not verified yet') + '</span></div>'
+        + (on ? btn('Verified', 'btn plain', '', a.name + ' is verified') : btn('Verify', 'btn green', 'open:verify:' + a.id, 'Verify ' + a.name)) + '</div>';
+    }).join('');
+    const top5 = BOARD.slice().sort((a, b) => (b[2] + b[3]) - (a[2] + a[3])).slice(0, 5).map((r, i) => '<div class="lrow"><span><span style="color:var(--t4);display:inline-block;width:28px">#' + (i + 1) + '</span><b>' + r[0] + '</b></span><span class="mono" style="font-weight:700">' + fmt(r[2] + r[3]) + '</span></div>').join('');
+    h += '<section class="p-card" aria-label="Your XP"><div class="three"><div class="pbox"><div class="plbl">Community</div><div class="pnum" style="color:var(--blue)">' + fmt(T.c) + '</div></div><div class="pbox"><div class="plbl">On-chain</div><div class="pnum" style="color:var(--green)">' + fmt(T.o) + '</div></div><div class="pbox" style="border:1px solid rgba(240,185,11,.35)"><div class="plbl">Total</div><div class="pnum" style="color:var(--gold)">' + fmt(T.t) + '</div></div></div>'
+      + '<div class="row" style="font-size:12px"><b>Level 4 · Builder</b><span class="muted">' + fmt(T.t) + ' / 4,000 · Rank #128</span></div><div class="bar"><i style="width:' + Math.min(100, Math.round(T.t / 40)) + '%;background:var(--gold)"></i></div></section>'
+      + '<section class="two" aria-label="Weekly streaks"><div class="streak"><span class="muted" style="font-size:12px">Community streak</span><b>2 weeks</b><div class="bar" style="height:5px"><i style="width:' + Math.round(weeklyDone / 9 * 100) + '%;background:var(--blue)"></i></div><span style="font-size:12px;color:var(--blue)">' + weeklyDone + ' / 9 this week · +50 bonus</span></div>'
+      + '<div class="streak"><span class="muted" style="font-size:12px">On-chain streak</span><b>3 weeks</b><div class="bar" style="height:5px"><i style="width:66%;background:var(--green)"></i></div><span style="font-size:12px;color:var(--green)">2 / 3 this week · ×1.1 next</span></div></section>'
+      + '<section class="p-card"><h2 class="h2s">Community accounts</h2><p style="margin:0;color:var(--t2);font-size:13px">Verify all three to unlock weekly quests. <span style="color:var(--gold);font-weight:600">+30 XP</span> bonus.</p>' + accs + '</section>'
+      + '<section class="p-card greenline" style="gap:8px"><h2 class="h2s g">Best next move</h2><div style="font-size:16px;font-weight:700">Hold 10,000 CMX-R for the season</div><p style="margin:0;color:var(--t2);font-size:13px">+20 On-chain XP a day, ×1.5 from day 30. Worth more than a month of social tasks.</p><button type="button" class="btn green" data-act="goOnchain">See on-chain quests</button></section>'
+      + '<section class="p-card" style="gap:8px"><div class="row"><h2 class="h2s">Leaderboard</h2><span class="muted" style="font-size:12px">You: <b style="color:var(--text)">#128</b></span></div>' + top5 + '<button type="button" class="btn ghost" data-act="goBoard">View full leaderboard</button></section>';
+  }
+
+  if (s.tab === 'quests') {
+    const doneCount = (id) => QUESTS[id].filter((q) => (q.max ? (s.subs[q.id] || 0) >= q.max : !!s.done[q.id])).length;
+    const groups = GROUPS.map((g) => '<button type="button" aria-pressed="' + (s.group === g.id) + '" class="grp' + (s.group === g.id ? ' on' : '') + '" data-act="group:' + g.id + '"><b>' + g.label + '</b><span class="mono muted" style="font-size:12px">' + doneCount(g.id) + '/' + QUESTS[g.id].length + '</span></button>').join('');
+    const cards = QUESTS[s.group].map((q) => {
+      const v = questView(s, q);
+      let label = v.label.replace(' first', '').replace('Done this week ✓', 'Done ✓');
+      const prog = q.max ? (s.subs[q.id] || 0) + '/' + q.max + ' this week' : v.progress;
+      return '<article class="qcard"><div class="row"><span class="tag" style="color:' + v.tag[1] + '">' + v.tag[0] + '</span><span class="mono" style="font-weight:700;font-size:14px;color:' + v.xpColor + '">' + v.xpLabel + '</span></div>'
+        + '<h3>' + q.title + '</h3><div class="cad">' + q.cadence + '</div><p style="margin:0;color:var(--t2);font-size:13px">' + q.desc + '</p>'
+        + '<div class="qfoot"><span class="cad">' + prog + '</span>' + btn(label, v.cls, v.a, label + ': ' + q.title) + '</div></article>';
+    }).join('');
+    const n = PNOTES[s.group];
+    h += '<div role="tabpanel" aria-label="Quests" style="display:flex;flex-direction:column;gap:12px"><nav class="pgroups" aria-label="Quest groups">' + groups + '</nav>'
+      + '<div class="row cad"><span>Daily reset 09:31:46</span><span>Weekly reset 4d 09:31</span></div>'
+      + '<div class="note" style="color:' + n[1] + '">' + n[0] + '</div>' + cards + '</div>';
+  }
+
+  if (s.tab === 'board') {
+    const key = { total: (r) => r[2] + r[3], community: (r) => r[2], onchain: (r) => r[3] }[s.boardMode];
+    const mine = { total: T.t, community: T.c, onchain: T.o }[s.boardMode];
+    const rows = BOARD.slice().sort((a, b) => key(b) - key(a)).map((r, i) => '<div class="brow"' + (i < 3 ? ' style="color:var(--gold)"' : '') + '><span style="display:flex;align-items:center;gap:10px;min-width:0"><b style="width:40px">#' + (i + 1) + '</b><span style="display:flex;flex-direction:column;min-width:0"><span style="font-weight:600">' + r[0] + '</span><span class="muted" style="font-size:11px">L' + r[1] + ' · C ' + fmt(r[2]) + ' · O ' + fmt(r[3]) + '</span></span></span><span class="mono" style="font-weight:700">' + fmt(key(r)) + '</span></div>').join('')
+      + '<div class="brow" style="background:rgba(0,210,106,.08);border-color:rgba(0,210,106,.5);color:var(--green)"><span style="display:flex;align-items:center;gap:10px"><b style="width:40px">#128</b><span style="display:flex;flex-direction:column"><span style="font-weight:600">You</span><span style="font-size:11px">L4 · C ' + fmt(T.c) + ' · O ' + fmt(T.o) + '</span></span></span><span class="mono" style="font-weight:700">' + fmt(mine) + '</span></div>';
+    const seg = [['total', 'Total'], ['community', 'Community'], ['onchain', 'On-chain']].map(([id, l]) => '<button type="button" aria-pressed="' + (s.boardMode === id) + '" class="' + (s.boardMode === id ? 'on' : '') + '" data-act="board:' + id + '">' + l + '</button>').join('');
+    h += '<div role="tabpanel" aria-label="Leaderboard" style="display:flex;flex-direction:column;gap:10px"><div class="seg" role="group" aria-label="Rank by">' + seg + '</div>' + rows + '<p style="margin:0;color:var(--t4);font-size:12px">Names are masked. Bots and bought engagement are removed.</p></div>';
+  }
+
+  if (s.tab === 'history') {
+    h += '<div role="tabpanel" aria-label="History" style="display:flex;flex-direction:column;gap:8px">' + HISTORY.map((e) => '<div class="hist"><div style="display:flex;flex-direction:column;min-width:0"><span style="font-weight:600">' + e[0].replace(' #general', '') + '</span><span style="color:var(--t4);font-size:12px">' + e[1] + '</span></div><span class="mono" style="font-weight:700;font-size:12px;white-space:nowrap;color:' + e[3] + '">' + e[2] + '</span></div>').join('') + '</div>';
+  }
+
+  h += '<footer class="foot"><span>Identity verification is required before XP is paid out.</span><span>One Discord, Telegram and X account per CrymadX account.</span></footer>';
+  if (s.modal) h += renderSheet(s);
+  return h + '</div>';
+}
+
+function renderSheet(s) {
+  const m = modalHead(s);
+  let b = '';
+  if (s.modal === 'verify') {
+    const v = VER[s.target] || VER.x;
+    b = '<div class="step"><span class="dot">1</span><span style="display:flex;flex-direction:column;gap:2px"><b>' + v.s1 + '</b><span class="muted" style="font-size:13px">' + v.d1.replace('in a new window', '') + '</span></span></div>'
+      + '<div class="step"><span class="dot">2</span><span style="display:flex;flex-direction:column;gap:2px"><b>' + v.s2 + '</b><span class="muted" style="font-size:13px">' + v.d2 + '</span></span></div>'
+      + '<span class="muted" style="font-size:12px">We never post or send messages for you.</span>'
+      + '<button type="button" class="btn full" style="' + v.bs + '" data-act="verify">' + v.btn + '</button>';
+  } else if (s.modal === 'submit') {
+    const v = SUB[s.target] || SUB.dc;
+    const used = s.subs[s.target] || 0;
+    b = '<p style="margin:0;color:var(--t2);font-size:14px">' + v.how.replace('right-click (or long-press)', 'long-press') + '</p>'
+      + '<label style="font-weight:600;font-size:14px" for="pl-' + s._uid + '">' + v.label + '</label><input id="pl-' + s._uid + '" class="field" type="url" value="' + v.value + '">'
+      + '<div class="ok"><span style="color:var(--green);font-weight:700">✓</span><span>' + v.check + '</span></div>'
+      + '<span class="cad">Submission ' + Math.min(used + 1, 3) + ' of 3 · resets in 4d 09:31</span>'
+      + '<button type="button" class="btn green full" data-act="submit">Submit for +' + m.tq.xp + ' XP</button>';
+  } else if (s.modal === 'quiz') {
+    const qz = QUIZ[s.target] || QUIZ.l2;
+    const ids = ['a', 'b', 'c', 'd'];
+    b = '<div class="video"><span class="play">' + ICON.play + '</span><span>' + qz[0] + '</span></div><span class="cad">Question 2 of 3</span>'
+      + '<fieldset style="margin:0;padding:0;border:0;display:flex;flex-direction:column;gap:8px"><legend style="font-weight:700;margin-bottom:8px">' + qz[1] + '</legend>'
+      + qz[2].map((t, i) => '<label class="opt' + (s.quizPick === ids[i] ? ' on' : '') + '" data-act="pick:' + ids[i] + '"><input type="radio" name="pq-' + s._uid + '"' + (s.quizPick === ids[i] ? ' checked' : '') + '> ' + t + '</label>').join('')
+      + '</fieldset><button type="button" class="btn green full" data-act="quiz">Next question</button>';
+  } else if (s.modal === 'daily') {
+    b = '<div style="text-align:center;display:flex;flex-direction:column;gap:2px"><span class="mono" style="font-size:34px;font-weight:700;color:var(--blue)">+10 XP</span><span style="color:var(--t2);font-size:14px">Day 6 of your daily streak</span></div>'
+      + '<div class="days">' + [1, 2, 3, 4, 5, 6, 7].map((n) => '<div class="day ' + (n < 6 ? 'past' : n === 6 ? 'now' : 'next') + '"><small>D' + n + '</small>' + (n < 6 ? '✓' : n === 6 ? '+10' : '+50') + '</div>').join('') + '</div>'
+      + '<p style="margin:0;color:var(--t3);font-size:13px;text-align:center">Day 7 tomorrow pays a +50 XP bonus. Missing a day restarts the count.</p>'
+      + '<button type="button" class="btn green full" data-act="close">Back to quests</button>';
+  } else if (s.modal === 'hold') {
+    b = '<div class="three"><div class="pbox" style="background:var(--s3)"><div class="muted" style="font-size:11px">In wallet</div><b class="mono" style="font-size:13px">12,450</b></div><div class="pbox" style="background:var(--s3)"><div class="muted" style="font-size:11px">Days held</div><b class="mono" style="font-size:13px">12</b></div><div class="pbox" style="background:var(--s3)"><div class="muted" style="font-size:11px">XP so far</div><b class="mono" style="font-size:13px;color:var(--green)">+240</b></div></div>'
+      + '<div class="row" style="font-size:12px"><b>Day 12 of 30</b><span class="muted">×1.5 from day 30</span></div><div class="bar"><i style="width:40%;background:var(--green)"></i></div>'
+      + '<ul class="rules"><li>Keep at least 10,000 CMX-R in your CrymadX wallet.</li><li>+20 XP a day, counted at 00:00 UTC.</li><li>Locked in the Vault earns twice as much.</li><li>Dropping below 10,000 restarts the count.</li></ul>'
+      + '<div class="two" style="gap:8px"><button type="button" class="btn ghost full" data-act="close">Lock in Vault</button><button type="button" class="btn green full" data-act="close">Buy more</button></div>';
+  }
+  return '<div class="p-ov"><div class="sheet" role="dialog" aria-modal="true" aria-label="' + m.title + '"><div class="grab" aria-hidden="true"></div><div class="row" style="align-items:flex-start"><div style="display:flex;flex-direction:column;gap:2px;min-width:0"><span class="kick" style="color:' + m.kick[1] + '">' + m.kick[0] + '</span><h2 style="margin:0;font-size:19px;line-height:1.25">' + m.title.replace('Learn: ', '') + '</h2></div><button type="button" class="x" aria-label="Close" data-act="close">✕</button></div>' + b + '</div></div>';
+}
+function modalHead(s) {
+  const tq = byId(s.target);
+  const kick = { verify: ['Verify an account', 'var(--indigo)'], submit: ['Weekly quest · +' + tq.xp + ' XP', 'var(--blue)'], quiz: ['Learn · +30 XP', 'var(--purple)'], daily: ['Daily reward', 'var(--gold)'], hold: ['On-chain · +20 XP a day', 'var(--green)'] }[s.modal];
+  const title = { verify: 'Verify your ' + (ACCNAME[s.target] || 'X'), submit: tq.title, quiz: tq.title, daily: 'Day 6 claimed', hold: 'Hold CMX-R' }[s.modal];
+  return { kick: kick, title: title, tq: tq };
+}
+
+/* ---------- mount ---------- */
+let uid = 0;
+FRAMES.forEach((f) => {
+  const fig = document.createElement('figure');
+  fig.className = 'fig';
+  fig.id = f.id;
+  fig.innerHTML = '<figcaption><b>' + f.title + '</b><span>' + f.sub + '</span></figcaption><div class="phone' + (f.fixed ? ' fixed' : '') + '"><div class="screen"></div></div>';
+  document.getElementById(f.list + '-list').appendChild(fig);
+  const screen = fig.querySelector('.screen');
+  const state = initState(f.init);
+  state._uid = ++uid;
+  const draw = () => { screen.innerHTML = renderPhone(state); };
+  screen.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-act]');
+    if (!el || el.disabled) return;
+    const a = el.getAttribute('data-act');
+    if (a === 'noop') return;
+    act(state, a);
+    draw();
+  });
+  draw();
+});
+</script>
+</body>
+</html>

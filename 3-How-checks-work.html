@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rewards Hub · How checks work</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+:root{--s1:#0A0A0A;--s2:#111;--s3:#141414;--line:rgba(255,255,255,.1);--text:#F5F5F5;--t2:#D4D4D4;--t3:#A3A3A3;--t4:#8C8C8C;--green:#00D26A;--gold:#F0B90B;--blue:#5BB8F5;--purple:#C3A6FF;--indigo:#8EA1FF;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#050505;color:var(--text);font:15px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--green)}
+a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+.top{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.92);backdrop-filter:blur(8px);border-bottom:1px solid #1d1d1d;padding:12px 24px;display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between}
+.top nav{display:flex;flex-wrap:wrap;gap:8px}
+.top nav a{min-height:40px;display:inline-flex;align-items:center;padding:0 14px;border-radius:10px;border:1px solid #2a2a2a;color:var(--t2);text-decoration:none;font-weight:600;font-size:14px}
+.top nav a.on{background:var(--text);color:#000;border-color:var(--text)}
+main{max-width:1100px;margin:0 auto;padding:28px 24px 64px}
+h1{margin:0 0 6px;font-size:28px}
+h2{font-size:21px;margin:40px 0 12px}
+p{margin:0 0 12px;color:var(--t2);max-width:75ch}
+.lead{color:var(--t3)}
+.tablebox{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{width:100%;border-collapse:collapse;min-width:720px;font-size:14px}
+th{background:var(--s2);color:var(--t3);text-align:left;padding:12px 14px;font-weight:600;font-size:13px}
+td{padding:12px 14px;border-top:1px solid rgba(255,255,255,.06);vertical-align:top}
+td.xp{font-family:"JetBrains Mono",ui-monospace,monospace;font-weight:700;white-space:nowrap}
+.grp{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--t3)}
+.how{font-size:12px;font-weight:700;padding:3px 8px;border-radius:6px;background:var(--s3);white-space:nowrap}
+.methods{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.m{background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.m h3{margin:0;font-size:17px}
+.m .when{font-size:13px;color:var(--t3)}
+.m ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.m li{display:flex;gap:10px}
+.n{width:26px;height:26px;flex:0 0 26px;border-radius:999px;background:rgba(0,210,106,.14);color:var(--green);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}
+.m li b{display:block}
+.m li span{color:var(--t2);font-size:14px}
+.m .nt{margin-top:auto;padding:12px;border-radius:10px;background:var(--s2);color:var(--t3);font-size:13px}
+.list{margin:0;padding-left:20px;color:var(--t2);display:flex;flex-direction:column;gap:8px;max-width:80ch}
+.callout{background:var(--s1);border:1px solid rgba(240,185,11,.35);border-radius:14px;padding:18px 20px}
+</style>
+</head>
+<body>
+<div class="top">
+<b>CrymadX Rewards Hub · Season 1 design</b>
+<nav aria-label="Design files">
+<a href="index.html">Start</a>
+<a href="1-Web.html">Web</a>
+<a href="2-Android.html">Android</a>
+<a href="3-How-checks-work.html" class="on" aria-current="page">How checks work</a>
+</nav>
+</div>
+<main>
+<h1>How quests are checked</h1>
+<p class="lead">Every quest, the XP it pays, and how CrymadX confirms the member really did it. Community XP is kept small; On-chain XP is large, because buying, holding and locking CMX-R is what matters most. XP values are proposals to tune.</p>
+
+<h2>All quests</h2>
+<div class="tablebox">
+<table>
+<thead><tr><th scope="col">Group</th><th scope="col">Quest</th><th scope="col">XP</th><th scope="col">How often</th><th scope="col">How it is checked</th></tr></thead>
+<tbody>
+<tr><td class="grp">Start here</td><td>Follow @[X HANDLE] on X</td><td class="xp" style="color:var(--blue)">+25</td><td>Once</td><td><span class="how" style="color:#E7E7E7">Spot-checked</span></td></tr>
+<tr><td class="grp">Start here</td><td>Join the CMX Official Discord</td><td class="xp" style="color:var(--blue)">+25</td><td>Once</td><td><span class="how" style="color:var(--indigo)">Discord bot</span></td></tr>
+<tr><td class="grp">Start here</td><td>Join the Telegram group</td><td class="xp" style="color:var(--blue)">+25</td><td>Once</td><td><span class="how" style="color:var(--indigo)">Telegram bot</span></td></tr>
+<tr><td class="grp">Start here</td><td>Visit CMX HUB</td><td class="xp" style="color:var(--blue)">+10</td><td>Once</td><td><span class="how" style="color:var(--green)">Our own records</span></td></tr>
+<tr><td class="grp">Start here</td><td>Subscribe on YouTube</td><td class="xp" style="color:var(--blue)">+25</td><td>Once</td><td><span class="how" style="color:var(--indigo)">YouTube sign-in</span></td></tr>
+<tr><td class="grp">Start here</td><td>Verify Discord, Telegram and X</td><td class="xp" style="color:var(--blue)">+30</td><td>Once</td><td><span class="how" style="color:var(--indigo)">Sign-in with each app</span></td></tr>
+<tr><td class="grp">Weekly</td><td>Start a conversation on Discord</td><td class="xp" style="color:var(--blue)">+5</td><td>3 a week, 1 a day</td><td><span class="how" style="color:var(--blue)">Message link</span></td></tr>
+<tr><td class="grp">Weekly</td><td>Start a conversation on Telegram</td><td class="xp" style="color:var(--blue)">+5</td><td>3 a week, 1 a day</td><td><span class="how" style="color:var(--blue)">Message link</span></td></tr>
+<tr><td class="grp">Weekly</td><td>Like and repost the weekly post on X</td><td class="xp" style="color:var(--blue)">+10</td><td>3 a week, 1 a day</td><td><span class="how" style="color:#E7E7E7">Post link</span></td></tr>
+<tr><td class="grp">Weekly</td><td>Finish all 9 weekly tasks (streak bonus)</td><td class="xp" style="color:var(--blue)">+50</td><td>Weekly</td><td><span class="how" style="color:var(--green)">Automatic</span></td></tr>
+<tr><td class="grp">Daily</td><td>Daily reward</td><td class="xp" style="color:var(--blue)">+10</td><td>Daily, +50 on day 7</td><td><span class="how" style="color:var(--green)">Automatic</span></td></tr>
+<tr><td class="grp">Learn</td><td>What CMX-R is · Native and wrapped CMX-R · How CMX HUB packages work</td><td class="xp" style="color:var(--blue)">+30 each</td><td>Once each</td><td><span class="how" style="color:var(--purple)">Quiz</span></td></tr>
+<tr><td class="grp">On-chain</td><td>Hold 10,000 CMX-R or more</td><td class="xp" style="color:var(--green)">+20 a day</td><td>Every day, ×1.5 from day 30</td><td><span class="how" style="color:var(--green)">Daily snapshot</span></td></tr>
+<tr><td class="grp">On-chain</td><td>Lock CMX-R in the Vault</td><td class="xp" style="color:var(--green)">+40 a day</td><td>Every day locked</td><td><span class="how" style="color:var(--green)">Daily snapshot</span></td></tr>
+<tr><td class="grp">On-chain</td><td>Trade on CrymadX</td><td class="xp" style="color:var(--green)">+2 per $1</td><td>Every trade</td><td><span class="how" style="color:var(--green)">Our own records</span></td></tr>
+<tr><td class="grp">On-chain</td><td>Buy a CMX HUB package</td><td class="xp" style="color:var(--green)">+500</td><td>Once, +100 per upgrade</td><td><span class="how" style="color:var(--green)">Our own records</span></td></tr>
+<tr><td class="grp">On-chain</td><td>First CMX-R buy</td><td class="xp" style="color:var(--green)">+200</td><td>Once</td><td><span class="how" style="color:var(--green)">Our own records</span></td></tr>
+<tr><td class="grp">On-chain</td><td>On-chain streak (3 actions a week)</td><td class="xp" style="color:var(--green)">×1.1</td><td>Next week's On-chain XP</td><td><span class="how" style="color:var(--green)">Automatic</span></td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>The five ways we check</h2>
+<div class="methods">
+<section class="m" style="border-color:rgba(0,210,106,.4)">
+<h3>On-chain, every day</h3><div class="when">Hold, lock, trade, buy, packages · daily snapshot</div>
+<ol><li><span class="n">1</span><span><b>Member</b>Buys and holds CMX-R, locks it in the Vault, trades on CrymadX or buys a CMX HUB package. Nothing to submit.</span></li>
+<li><span class="n">2</span><span><b>CrymadX</b>Takes a snapshot of balances and Vault locks once a day and totals trades from our own records.</span></li>
+<li><span class="n">3</span><span><b>CrymadX</b>Adds On-chain XP: per day held or locked, per dollar traded, once per package.</span></li></ol>
+<div class="nt">Fully automatic and the hardest to fake. Trades between a member's own accounts are removed before XP is counted.</div>
+</section>
+<section class="m">
+<h3>Joined the server or group</h3><div class="when">Discord, Telegram, YouTube, CMX HUB · seconds</div>
+<ol><li><span class="n">1</span><span><b>Member</b>Verifies Discord and Telegram once with their login buttons, and YouTube with Google sign-in.</span></li>
+<li><span class="n">2</span><span><b>Member</b>Joins the CMX Official Discord, the Telegram group or the YouTube channel, then taps Verify.</span></li>
+<li><span class="n">3</span><span><b>CrymadX</b>Our Discord and Telegram bots confirm the member is inside; YouTube confirms the subscription.</span></li></ol>
+<div class="nt">Re-checked before payout, so leaving removes the XP.</div>
+</section>
+<section class="m">
+<h3>Message link</h3><div class="when">Weekly Discord and Telegram conversations · seconds</div>
+<ol><li><span class="n">1</span><span><b>Member</b>Starts or joins a conversation, then pastes the link to their own message.</span></li>
+<li><span class="n">2</span><span><b>CrymadX</b>Our bot opens the message and checks it was written this week by the verified account and is long enough to be real.</span></li>
+<li><span class="n">3</span><span><b>CrymadX</b>Adds Community XP, up to 3 times a week and once a day.</span></li></ol>
+<div class="nt">Spam, copy-paste and one-word messages are refused. Moderators can strike a message, which removes its XP.</div>
+</section>
+<section class="m">
+<h3>Post link</h3><div class="when">Weekly like and repost on X · about a minute</div>
+<ol><li><span class="n">1</span><span><b>Member</b>Likes and reposts or quotes one of our latest 3 posts, adding their personal code when quoting.</span></li>
+<li><span class="n">2</span><span><b>Member</b>Pastes the link.</span></li>
+<li><span class="n">3</span><span><b>CrymadX</b>Checks the public post belongs to the verified X account and refers to one of our latest 3 posts.</span></li></ol>
+<div class="nt">Avoids paying X for follower lookups. Follows on X are spot-checked instead.</div>
+</section>
+<section class="m">
+<h3>Quiz</h3><div class="when">Learn quests · instant</div>
+<ol><li><span class="n">1</span><span><b>Member</b>Watches a short video about CMX-R, wrapped CMX-R or CMX HUB packages.</span></li>
+<li><span class="n">2</span><span><b>Member</b>Answers 3 questions.</span></li>
+<li><span class="n">3</span><span><b>CrymadX</b>Adds Community XP when all 3 are right. A wrong answer can be retried the next day.</span></li></ol>
+<div class="nt">Teaches the ecosystem before people buy, which means fewer support tickets later.</div>
+</section>
+</div>
+
+<h2>Fair play</h2>
+<ul class="list">
+<li>Identity verification on CrymadX is required before any XP is paid out in CMX-R.</li>
+<li>One Discord, Telegram and X account per CrymadX account.</li>
+<li>Leaving the server or unfollowing removes that quest's XP.</li>
+<li>Bots, bought followers or copied content void the season's XP.</li>
+<li>No referral rewards in this season, as requested.</li>
+</ul>
+
+<h2>Still to decide</h2>
+<div class="callout">
+<ul class="list">
+<li>Season pool size in CMX-R and the season end date (suggested length: 2 to 3 months).</li>
+<li>The minimum holding for the Hold quest (shown as 10,000 CMX-R).</li>
+<li>Final XP values for each quest.</li>
+<li>Our X handle, and getting the CrymadX X account verified before launch.</li>
+<li>Setting up the one CMX Official Discord for every project, with support tickets and feedback channels.</li>
+</ul>
+</div>
+</main>
+</body>
+</html>
